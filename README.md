@@ -1,6 +1,10 @@
 # bloc_test_app
 
-A new Flutter application.
+BLoC pattern excercise application
+
+-Counter
+
+-Timer
 
 ## Getting Started
 
