@@ -4,6 +4,7 @@ import 'package:bloc_test_app/pages/authentication/auth_home.dart';
 import 'package:bloc_test_app/pages/authentication/splash_screen.dart';
 import 'package:bloc_test_app/pages/authentication/user_repository.dart';
 import 'package:bloc_test_app/pages/login/login_screen.dart';
+import 'package:bloc_test_app/pages/todo/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,9 +39,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
               return SplashScreen();
             }
             if (state is Authenticated) {
-              return HomeScreen(
-                name: state.displayName,
-              );
+              return TodoPage();
             }
             if (state is Unauthenticated) {
               return LoginScreen(

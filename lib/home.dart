@@ -1,6 +1,7 @@
 import 'package:bloc_test_app/pages/authentication/authentication.dart';
 import 'package:bloc_test_app/pages/authentication/user_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:todos_app_core/todos_app_core.dart';
 
 class HomePage extends StatefulWidget {
   final UserRepository _userRepository;
@@ -67,6 +68,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   );
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              color: Colors.grey[300],
+              child: ListTile(
+                title: Text(
+                  'Firestore Todo Example',
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/todo');
                 },
               ),
             ),
