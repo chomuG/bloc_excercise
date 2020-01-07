@@ -26,8 +26,35 @@ dependencies:
   flutter_bloc: ^2.0.0
   equatable: ^0.6.0
   wave: ^0.0.8
-
   meta: ^1.1.6
+  cloud_firestore: 0.8.2+1
+  firebase_auth: 0.7.0
+  google_sign_in: 3.2.4
+  firebase_core: ^0.2.5+1
+  font_awesome_flutter: ^8.4.0
+
+  todos_repository:
+    path: todos_repository
+  user_repository:
+    path: user_repository
+
+dependency_overrides:
+  todos_app_core:
+    git:
+      url: https://github.com/felangel/flutter_architecture_samples
+      path: todos_app_core
+      ref: expose-repositories
+  todos_repository_core:
+    git:
+      url: https://github.com/felangel/flutter_architecture_samples
+      path: todos_repository_core
+      ref: expose-repositories
+  todos_repository_simple:
+    git:
+      url: https://github.com/felangel/flutter_architecture_samples
+      path: todos_repository_simple
+      ref: expose-repositories
+
 
 dev_dependencies:
   flutter_test:
