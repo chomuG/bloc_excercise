@@ -11,7 +11,6 @@ enum CounterEvent { increment, decrement }
 
 class _CounterPageState extends State<CounterPage> {
   CounterBloc _counterBloc;
-
   @override
   void initState() {
     super.initState();

@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_test_app/blocs/login_bloc/bloc.dart';
 import 'package:bloc_test_app/pages/authentication/user_repository.dart';
+
 import 'package:bloc_test_app/pages/login/validators.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:bloc_test_app/pages/login/login_screen.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   UserRepository _userRepository;

@@ -1,10 +1,17 @@
+import 'package:bloc_test_app/blocs/data_bloc/bloc.dart';
 import 'package:bloc_test_app/blocs/tab_bloc/bloc.dart';
 import 'package:bloc_test_app/blocs/timer_bloc/timer_bloc.dart';
 import 'package:bloc_test_app/pages/authentication/authentication.dart';
 import 'package:bloc_test_app/pages/authentication/simple_bloc_delegate.dart';
-import 'package:bloc_test_app/pages/authentication/user_repository.dart';
+
+import 'package:bloc_test_app/pages/authentication/user_repository.dart'; //로그인만
+
+//import 'package:user_repository/user_repository.dart';
 import 'package:bloc_test_app/pages/counter/counter.dart';
 import 'package:bloc_test_app/home.dart';
+import 'package:bloc_test_app/pages/navigation/navigation.dart';
+import 'package:bloc_test_app/pages/navigation/navigation2.dart';
+import 'package:bloc_test_app/pages/snackbar/snackbar.dart';
 import 'package:bloc_test_app/pages/timer/ticker.dart' as prefix0;
 import 'package:bloc_test_app/pages/timer/timer.dart';
 import 'package:bloc/bloc.dart';
@@ -19,6 +26,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:todos_app_core/todos_app_core.dart';
 import 'package:bloc_test_app/models/models.dart';
 import 'blocs/authentication_bloc/bloc.dart';
+//import 'blocs/authentication_todo_bloc/bloc.dart';
+import 'blocs/navigation_bloc/bloc.dart';
 
 class BlocTest extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
@@ -38,6 +47,11 @@ class BlocTest extends StatelessWidget {
         isEditing: false,
       );
     },
+    '/snackbar': (context) => SnackPage(),
+    '/pageA': (context) => PageA2(),
+    '/pageB': (context) => PageB2(),
+    '/navi1': (context) => NavigationPage1(),
+    '/navi2': (context) => NavigationPage2(),
   };
 
   @override
@@ -56,6 +70,7 @@ class BlocTest extends StatelessWidget {
           ),
         ),
         BlocProvider<AuthenticationBloc>(
+          //로그인만
           create: (BuildContext context) => AuthenticationBloc(
             userRepository: userRepository,
           )..add(AppStarted()),
@@ -84,6 +99,12 @@ class BlocTest extends StatelessWidget {
           create: (context) => StatsBloc(
             todosBloc: BlocProvider.of<TodosBloc>(context),
           ),
+        ),
+        BlocProvider<DataBloc>(
+          create: (context) => DataBloc(),
+        ),
+        BlocProvider<NavigationBloc>(
+          create: (context) => NavigationBloc(),
         ),
       ],
       child: MaterialApp(

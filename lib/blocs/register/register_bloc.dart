@@ -1,5 +1,6 @@
 import 'package:bloc_test_app/blocs/register/bloc.dart';
 import 'package:bloc_test_app/pages/authentication/user_repository.dart';
+
 import 'package:bloc_test_app/pages/login/validators.dart';
 import 'package:meta/meta.dart';
 import 'dart:async';
